@@ -1,0 +1,114 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: DataqFileII - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "D:\Temp\RSP52.bat" with contents
+[
+@echo off
+echo. >"hlp\DataqFileII.hm"
+echo // Commands (ID_* and IDM_*) >>"hlp\DataqFileII.hm"
+makehm ID_,HID_,0x10000 IDM_,HIDM_,0x10000 resource.h >>"hlp\DataqFileII.hm"
+echo // Prompts (IDP_*) >>"hlp\DataqFileII.hm"
+makehm IDP_,HIDP_,0x30000 resource.h >>"hlp\DataqFileII.hm"
+echo // Resources (IDR_*) >>"hlp\DataqFileII.hm"
+makehm IDR_,HIDR_,0x20000 resource.h >>"hlp\DataqFileII.hm"
+echo // Dialogs (IDD_*) >>"hlp\DataqFileII.hm"
+makehm IDD_,HIDD_,0x20000 resource.h >>"hlp\DataqFileII.hm"
+echo // Frame Controls (IDW_*) >>"hlp\DataqFileII.hm"
+makehm IDW_,HIDW_,0x50000 resource.h >>"hlp\DataqFileII.hm"
+]
+Creating command line "D:\Temp\RSP52.bat"
+Creating temporary file "D:\Temp\RSP53.bat" with contents
+[
+@echo off
+start /wait hcw /C /E /M "DataqFileII.hpj"
+if errorlevel 1 goto :Error
+if not exist "DataqFileII.hlp" goto :Error
+copy "DataqFileII.hlp" .\Release
+goto :done
+:Error
+echo DataqFileII.hpj(1) : error: Problem encountered creating help file
+type DataqFileII.log
+:done
+]
+Creating command line "D:\Temp\RSP53.bat"
+Creating command line "midl.exe /nologo /D "NDEBUG" /tlb "Release/DataqFileII.tlb" /mktyplib203 /win32 "D:\CHEN\ActiveX\DataqFileII\DataqFileII.odl""
+Building Help Include File ...
+Building Help ...
+        1 file(s) copied.
+Creating command line "rc.exe /l 0x409 /fo"Release/DataqFileII.res" /i "Release" /d "NDEBUG" /d "_AFXDLL" "D:\CHEN\ActiveX\DataqFileII\DataqFileII.rc"" 
+Creating temporary file "D:\Temp\RSP55.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "_USRDLL" /Fp"Release/DataqFileII.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"D:\CHEN\ActiveX\DataqFileII\DataqFileII.cpp"
+"D:\CHEN\ActiveX\DataqFileII\Log.cpp"
+"D:\CHEN\ActiveX\DataqFileII\ReadDataqFileIICtl.cpp"
+"D:\CHEN\ActiveX\DataqFileII\ReadDataqFileIIPpg.cpp"
+"D:\CHEN\ActiveX\DataqFileII\WriteDataqFileIICtl.cpp"
+"D:\CHEN\ActiveX\DataqFileII\WriteDataqFileIIPpg.cpp"
+]
+Creating command line "cl.exe @D:\Temp\RSP55.tmp" 
+Creating temporary file "D:\Temp\RSP56.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /D "_USRDLL" /Fp"Release/DataqFileII.pch" /Yc"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"D:\CHEN\ActiveX\DataqFileII\StdAfx.cpp"
+]
+Creating command line "cl.exe @D:\Temp\RSP56.tmp" 
+Creating temporary file "D:\Temp\RSP57.tmp" with contents
+[
+/nologo /subsystem:windows /dll /incremental:no /pdb:"Release/DataqFileII.pdb" /machine:I386 /def:".\DataqFileII.def" /out:"Release/DataqFileII.ocx" /implib:"Release/DataqFileII.lib" 
+.\Release\DataqFileII.obj
+.\Release\Log.obj
+.\Release\ReadDataqFileIICtl.obj
+.\Release\ReadDataqFileIIPpg.obj
+.\Release\StdAfx.obj
+.\Release\WriteDataqFileIICtl.obj
+.\Release\WriteDataqFileIIPpg.obj
+.\Release\DataqFileII.res
+]
+Creating command line "link.exe @D:\Temp\RSP57.tmp"
+Creating temporary file "D:\Temp\RSP58.bat" with contents
+[
+@echo off
+regsvr32 /s /c ".\Release\DataqFileII.ocx"
+echo regsvr32 exec. time > ".\Release\regsvr32.trg"
+]
+Creating command line "D:\Temp\RSP58.bat"
+Creating Type Library...
+Processing D:\CHEN\ActiveX\DataqFileII\DataqFileII.odl
+DataqFileII.odl
+Processing C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\oaidl.idl
+oaidl.idl
+Processing C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\objidl.idl
+objidl.idl
+Processing C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\unknwn.idl
+unknwn.idl
+Processing C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\wtypes.idl
+wtypes.idl
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+DataqFileII.cpp
+Log.cpp
+ReadDataqFileIICtl.cpp
+ReadDataqFileIIPpg.cpp
+WriteDataqFileIICtl.cpp
+WriteDataqFileIIPpg.cpp
+Generating Code...
+Linking...
+   Creating library Release/DataqFileII.lib and object Release/DataqFileII.exp
+<h3>Output Window</h3>
+Registering ActiveX Control...
+
+
+
+<h3>Results</h3>
+DataqFileII.ocx - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
